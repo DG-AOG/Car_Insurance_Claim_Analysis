@@ -12,4 +12,4 @@ Feature Engineering,
 Model training & evaluation.
 
 ## Open in Google Colab
-[![Open In Colab](https://colab.research.google.com/drive/1XUKzWUmhNNDe9KI1SNpI-Db1FL1zvfBn?usp=sharing)]
+[[Open In Colab](https://colab.research.google.com/drive/1XUKzWUmhNNDe9KI1SNpI-Db1FL1zvfBn?usp=sharing)]
