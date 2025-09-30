@@ -1,0 +1,34 @@
+## Summary of Car Insurance Claim Prediction Analysis
+
+Objective: Predict whether a customer will submit a vehicle insurance claim (OUTCOME).
+
+**Key Findings from Exploratory Data Analysis:**
+
+*   Missing values were present in the `CREDIT_SCORE` and `ANNUAL_MILEAGE` columns, which were imputed with the mean.
+*   Several categorical features showed a notable relationship with the `OUTCOME`, such as `AGE` (younger drivers having a higher claim rate) and `DRIVING_EXPERIENCE`.
+*   Among numerical features, `SPEEDING_VIOLATIONS`, `DUIS`, and `PAST_ACCIDENTS` showed positive correlations with the `OUTCOME`, as expected. `CREDIT_SCORE` had a negative correlation.
+
+**Model Performance:**
+
+Three classification models were trained and evaluated: Logistic Regression, Random Forest, and Gradient Boosting. The models were evaluated using Accuracy, Precision, Recall, F1-score, and ROC-AUC.
+
+| Model               | Accuracy | Precision | Recall | F1-score | ROC-AUC |
+| :------------------ | :------- | :-------- | :----- | :------- | :------ |
+| Logistic Regression | 0.8295   | 0.7483    | 0.6874 | 0.7165   | 0.8868  |
+| Random Forest       | 0.8260   | 0.7291    | 0.7081 | 0.7184   | 0.8890  |
+| Gradient Boosting   | **0.8430** | 0.7472    | **0.7544** | **0.7508** | **0.9114** |
+
+Based on the evaluation metrics, the **Gradient Boosting** model performed the best overall, achieving the highest Accuracy, Recall, F1-score, and ROC-AUC.
+
+**Feature Importance:**
+
+Analysis of feature importance from the tree-based models and coefficients from Logistic Regression revealed that features like `VEHICLE_OWNERSHIP`, `SPEEDING_VIOLATIONS`, `DRIVING_EXPERIENCE`, `VEHICLE_YEAR`, and `PAST_ACCIDENTS` were among the most influential in predicting the `OUTCOME`.
+
+**Confusion Matrix Analysis:**
+
+The confusion matrix for the Gradient Boosting model provided a detailed breakdown of correct and incorrect predictions. It showed that the model was effective at identifying true negatives (no claim) and true positives (claim), with a balance between false positives (predicting claim when there was none) and false negatives (missing actual claims).
+
+**Conclusion:**
+
+The Gradient Boosting model appears to be the most promising for predicting car insurance claims based on this dataset. For the assessment objective which states **develop a predictive model that determines if a customer will submit a vehicle insurance claim in the next three months**, this dataset does not contain information about the timing of claims. To build a model that predicts claims within a specific timeframe like three months, I would need data that includes timestamps or dates of claims and policy start/end dates.
+The models I built predicts the propensity of a customer to file a claim based on certain characteristics like other customer and vehicle information.
